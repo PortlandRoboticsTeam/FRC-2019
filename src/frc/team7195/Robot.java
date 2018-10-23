@@ -15,20 +15,19 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.team7195.commands.AltAutonomus;
 import frc.team7195.commands.BaseAutonomus;
 import frc.team7195.subsystems.Drivetrain;
-import frc.team7195.subsystems.Pnuematics;
+
 
 public class Robot extends TimedRobot 
 {
 
     public static final Drivetrain Drivetrain = new Drivetrain();
-    public static final Pnuematics Pnuematics = new Pnuematics();
     public static OI oi;
 
     private Command autonomousCommand;
     private SendableChooser<Command> chooser = new SendableChooser<>();
 
     /**
-     * This function is run when the robot is first started up and should be
+     * This function is run when the robot is first started up and is
      * used for any initialization code.
      */
     @Override
@@ -41,9 +40,9 @@ public class Robot extends TimedRobot
     }
 
     /**
-     * This function is called once each time the robot enters Disabled mode.
-     * You can use it to reset any subsystem information you want to clear when
-     * the robot is disabled.
+     * This function is called once each time the robot enters Disabled mode
+     * (generally when the game ends) You can use it to reset any subsystem
+     * information you want to clear when the robot is disabled.
      */
     @Override
     public void disabledInit() 
@@ -87,8 +86,8 @@ public class Robot extends TimedRobot
     {
         // This makes sure that the autonomous stops running when
         // teleop starts running. If you want the autonomous to
-        // continue until interrupted by another command, remove
-        // this line or comment it out.
+        // continue until interrupted by another command, remove it
+
         if (autonomousCommand != null) 
         {
             autonomousCommand.cancel();

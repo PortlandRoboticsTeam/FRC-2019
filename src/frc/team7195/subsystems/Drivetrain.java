@@ -5,13 +5,15 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class Drivetrain extends Subsystem {
 
-    // Put methods for controlling this subsystem
-    // here. Call these from Commands.
+    /**
+     * In this class you declare the motor controllers and related
+     * hardware and define the way to use the system. For example, different
+     * joystick steering methods and autonomous driving code goes here.
+     **/
 
 
     public void initDefaultCommand() {
-        // TODO: Set the default command, if any, for a subsystem here. Example:
-        //    setDefaultCommand(new MySpecialCommand());
+        //setDefaultCommand(new ExampleCommand());
     }
 }
 
