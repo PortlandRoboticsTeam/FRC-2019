@@ -1,7 +1,11 @@
 package frc.team7195.subsystems;
 
 
+import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.drive.MecanumDrive;
+
+import static frc.team7195.Robot.oi;
 
 public class Drivetrain extends Subsystem {
 
@@ -13,7 +17,16 @@ public class Drivetrain extends Subsystem {
      * joystick driving methods and autonomous driving code goes here.
      **/
 
+    static Spark frontRight = new Spark(1);
+    static Spark rearRight = new Spark(2);
+    static Spark frontLeft = new Spark(3);
+    static Spark rearLeft = new Spark(4);
 
+    public static MecanumDrive drive = new MecanumDrive(frontRight, rearRight, frontLeft, rearLeft);
+
+    public static void mecanumDrive() {
+        drive.driveCartesian(oi.m_stick.getX(), oi.m_stick.getY(), oi.m_stick.getZ());
+    }
 
 
     public void initDefaultCommand() {
