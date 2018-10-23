@@ -29,7 +29,8 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
  */
 public class OI 
 {
-    Joystick stick = new Joystick(0);
-    Button button = new JoystickButton(stick, 1);
+    Joystick rightStick = new Joystick(0);
+    Joystick leftStick = new Joystick(1);
+    Button button = new JoystickButton(rightStick, 1);
 
 }
