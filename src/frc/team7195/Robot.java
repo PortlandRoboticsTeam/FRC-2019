@@ -7,6 +7,7 @@
 
 package frc.team7195;
 
+import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -34,6 +35,7 @@ public class Robot extends TimedRobot
     public void robotInit() 
     {
         oi = new OI();
+        //CameraServer.getInstance().startAutomaticCapture();
         chooser.addDefault("Default Auto", new BaseAutonomus());
         chooser.addObject("Secondary Auto", new AltAutonomus());
         SmartDashboard.putData("Auto mode", chooser);

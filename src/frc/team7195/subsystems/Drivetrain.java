@@ -1,6 +1,7 @@
 package frc.team7195.subsystems;
 
 
+import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.MecanumDrive;
@@ -21,11 +22,12 @@ public class Drivetrain extends Subsystem {
     static Spark rearRight = new Spark(2);
     static Spark frontLeft = new Spark(3);
     static Spark rearLeft = new Spark(4);
+    //static AnalogGyro m_gyro = new AnalogGyro(1);
 
     public static MecanumDrive drive = new MecanumDrive(frontRight, rearRight, frontLeft, rearLeft);
 
     public static void mecanumDrive() {
-        drive.driveCartesian(oi.m_stick.getX(), oi.m_stick.getY(), oi.m_stick.getZ());
+        drive.driveCartesian(oi.m_stick.getX(), oi.m_stick.getY(), oi.m_stick.getZ()/*, m_gyro.getAngle()*/);
     }
 
 
