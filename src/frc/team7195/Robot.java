@@ -7,14 +7,15 @@
 
 package frc.team7195;
 
-import edu.wpi.first.wpilibj.CameraServer;
+import edu.wpi.first.wpilibj.BuiltInAccelerometer;
+import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.team7195.commands.AltAutonomus;
-import frc.team7195.commands.BaseAutonomus;
+import frc.team7195.commands.AltAutonomous;
+import frc.team7195.commands.BaseAutonomous;
 import frc.team7195.subsystems.Drivetrain;
 
 
@@ -36,9 +37,16 @@ public class Robot extends TimedRobot
     {
         oi = new OI();
         //CameraServer.getInstance().startAutomaticCapture();
-        chooser.addDefault("Default Auto", new BaseAutonomus());
-        chooser.addObject("Secondary Auto", new AltAutonomus());
+
+        //Allows selection of autonomous mode for SmartDashboard
+        chooser.addDefault("Default Auto", new BaseAutonomous());
+        chooser.addObject("Secondary Auto", new AltAutonomous());
         SmartDashboard.putData("Auto mode", chooser);
+
+        //Pushes data from robot to SmartDashboard
+        SmartDashboard.putData("PDP Info", new PowerDistributionPanel(1));
+        SmartDashboard.putData("Built in Accelerometer", new BuiltInAccelerometer());
+        SmartDashboard.putData("Drivetrain", new Drivetrain());
     }
 
     /**
@@ -59,7 +67,7 @@ public class Robot extends TimedRobot
     }
 
     /**
-     * This code helps set up the autonomus by accepting input from the
+     * This code helps set up the autonomous by accepting input from the
      * sendableChooser above.
      */
     @Override

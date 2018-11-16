@@ -3,8 +3,8 @@ package frc.team7195.commands;
 import edu.wpi.first.wpilibj.command.Command;
 
 
-public class AltAutonomus extends Command {
-    public AltAutonomus() {
+public class BaseAutonomous extends Command {
+    public BaseAutonomous() {
 
     }
 
@@ -30,7 +30,6 @@ public class AltAutonomus extends Command {
 
 
     /**
-     *
      * Returns whether this command is finished. If it is, then the command will be removed and
      * end() will be called.
      * If this class returns true, the command finishes, if it returns false, the command will continue.

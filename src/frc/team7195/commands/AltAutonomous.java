@@ -3,8 +3,8 @@ package frc.team7195.commands;
 import edu.wpi.first.wpilibj.command.Command;
 
 
-public class BaseAutonomus extends Command {
-    public BaseAutonomus() {
+public class AltAutonomous extends Command {
+    public AltAutonomous() {
 
     }
 
