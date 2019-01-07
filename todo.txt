@@ -1,0 +1,20 @@
+Command groups:
+Pickup ball
+-Press button
+-Recognize ball from vision system
+-Orient and move relative to ball
+-???
+Deliver ball
+-???
+Pickup hatch cover
+-
+Place hatch cover
+-???
+Climb lower platform
+-Recognize platform from vision system
+-
+Climb upper platform
+-Recognize platform from vision system
+-
+Vision during sandstorm
+-Use Rasberry Pi as a coprocessor?
