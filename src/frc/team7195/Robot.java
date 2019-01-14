@@ -16,6 +16,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.team7195.commands.AltAutonomous;
 import frc.team7195.commands.BaseAutonomous;
+import frc.team7195.commands.DriveModeSet;
 import frc.team7195.subsystems.Drivetrain;
 
 
@@ -26,7 +27,9 @@ public class Robot extends TimedRobot
     public static OI oi;
 
     private Command autonomousCommand;
+    private Command driveModeSet;
     private SendableChooser<Command> chooser = new SendableChooser<>();
+    private SendableChooser<Command> driveChooser = new SendableChooser<>();
 
     /**
      * This function is run when the robot is first started up and is
@@ -38,10 +41,16 @@ public class Robot extends TimedRobot
         oi = new OI();
         //CameraServer.getInstance().startAutomaticCapture();
 
-        //Allows selection of autonomous mode for SmartDashboard
+        //Allows selection of autonomous mode from SmartDashboard
         chooser.addDefault("Default Auto", new BaseAutonomous());
         chooser.addObject("Secondary Auto", new AltAutonomous());
         SmartDashboard.putData("Auto mode", chooser);
+
+        //Allows selection of drive type from SmartDashboard
+        driveChooser.addDefault("Tank Drive", new DriveModeSet(0));
+        driveChooser.addObject("Standard Drive", new DriveModeSet(1));
+        driveChooser.addObject("Curvature Drive", new DriveModeSet(2));
+        SmartDashboard.putData("Driving Mode", chooser);
 
         //Pushes data from robot to SmartDashboard
         SmartDashboard.putData("PDP Info", new PowerDistributionPanel(1));
@@ -89,12 +98,14 @@ public class Robot extends TimedRobot
     public void autonomousPeriodic() 
     {
         Scheduler.getInstance().run();
-        Drivetrain.mecanumDrive();
+        Drivetrain.tankDrive();
     }
 
     @Override
     public void teleopInit() 
     {
+        driveModeSet = chooser.getSelected();
+
         // This makes sure that the autonomous stops running when
         // teleop starts running. If you want the autonomous to
         // continue until interrupted by another command, remove it
