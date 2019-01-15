@@ -46,11 +46,11 @@ public class Robot extends TimedRobot
         chooser.addObject("Secondary Auto", new AltAutonomous());
         SmartDashboard.putData("Auto mode", chooser);
 
-        //Allows selection of drive type from SmartDashboard
+        //Allows selection of drive type for test mode from SmartDashboard
         driveChooser.addDefault("Tank Drive", new DriveModeSet(0));
         driveChooser.addObject("Standard Drive", new DriveModeSet(1));
         driveChooser.addObject("Curvature Drive", new DriveModeSet(2));
-        SmartDashboard.putData("Driving Mode", chooser);
+        SmartDashboard.putData("Test Driving Mode", chooser);
 
         //Pushes data from robot to SmartDashboard
         SmartDashboard.putData("PDP Info", new PowerDistributionPanel(1));
@@ -104,8 +104,8 @@ public class Robot extends TimedRobot
     @Override
     public void teleopInit() 
     {
-        driveModeSet = chooser.getSelected();
 
+        
         // This makes sure that the autonomous stops running when
         // teleop starts running. If you want the autonomous to
         // continue until interrupted by another command, remove it
@@ -124,6 +124,20 @@ public class Robot extends TimedRobot
     {
         Scheduler.getInstance().run();
 
+        //Sets the primary driving mode
+        Drivetrain.tankDrive();
+    }
+
+    /**
+     * This function sets up testing mode
+     */
+    public void testInit() {
+        driveModeSet = chooser.getSelected();
+
+        if (driveModeSet != null)
+        {
+            driveModeSet.start();
+        }
     }
 
     /**
@@ -132,6 +146,6 @@ public class Robot extends TimedRobot
     @Override
     public void testPeriodic() 
     {
-        
+        Scheduler.getInstance().run();
     }
 }
