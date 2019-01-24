@@ -29,9 +29,16 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
  */
 public class OI 
 {
+    //Declare joysticks
     public static Joystick m_stick = new Joystick(0);
     public static Joystick s_stick = new Joystick(1);
 
-    public static Button trigger = new JoystickButton(m_stick, 1);
+    //Declare buttons
+    public static Button rightTrigger = new JoystickButton(m_stick, 1);
+    public static Button leftTrigger = new JoystickButton(s_stick, 1);
+    public static Button lift = new JoystickButton(m_stick, 12);
+    public static Button lower = new JoystickButton(m_stick, 11);
+    public static Button stopLifter = new JoystickButton(m_stick, 9);
 
+    //Assign commands to buttons
 }
