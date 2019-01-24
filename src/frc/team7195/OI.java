@@ -32,6 +32,6 @@ public class OI
     public static Joystick m_stick = new Joystick(0);
     public static Joystick s_stick = new Joystick(1);
 
-    //Button button = new JoystickButton(m_stick, 1);
+    public static Button trigger = new JoystickButton(m_stick, 1);
 
 }
