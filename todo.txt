@@ -18,3 +18,8 @@ Climb upper platform
 -
 Vision during sandstorm
 -Use Rasberry Pi as a coprocessor?
+
+Motor controllers:
+Arm:
+2 motors for conveyor
+2 solenoids in tandem to open/close?
