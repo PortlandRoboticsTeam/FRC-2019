@@ -9,11 +9,11 @@ public class Elevator extends Subsystem {
     public static PWMTalonSRX elevatorMotor = new PWMTalonSRX(0);
 
     public static void elevatorUp() {
-        elevatorMotor.set(0);
+        elevatorMotor.set(1);
     }
 
     public static void elevatorDown() {
-        elevatorMotor.set(1);
+        elevatorMotor.set(0);
     }
 
     public void initDefaultCommand() {

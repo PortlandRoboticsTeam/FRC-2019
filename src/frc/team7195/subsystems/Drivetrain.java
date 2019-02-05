@@ -10,14 +10,6 @@ import frc.team7195.OI;
 
 public class Drivetrain extends Subsystem {
 
-    /**
-     * Subsystems are used to group hardware and define ways it is used.
-     *
-     * In this class you declare the motor controllers and related
-     * hardware and define the ways this system is used. For example, different
-     * joystick driving methods and autonomous driving code goes here.
-     **/
-
     private static Spark frontRight = new Spark(1);
     private static Spark rearRight = new Spark(2);
     private static Spark frontLeft = new Spark(3);

@@ -23,3 +23,6 @@ Motor controllers:
 Arm:
 2 motors for conveyor
 2 solenoids in tandem to open/close?
+
+Elevator:
+1 motor pulling wire
