@@ -34,21 +34,22 @@ public class OI {
     public static Joystick s_stick = new Joystick(1);
 
     //Declare buttons
-    public static Button rightTrigger = new JoystickButton(m_stick, 1);
-    public static Button leftTrigger = new JoystickButton(s_stick, 1);
-    public static Button buttonThree = new JoystickButton(m_stick, 3);
-    public static Button buttonFour = new JoystickButton(m_stick, 4);
-    public static Button buttonFive = new JoystickButton(m_stick, 5);
-    public static Button buttonSix = new JoystickButton(m_stick, 6);
-    public static Button s_buttonTwelve = new JoystickButton(s_stick, 12);
+    private static Button rightTrigger = new JoystickButton(m_stick, 1);
+    private static Button leftTrigger = new JoystickButton(s_stick, 1);
+    private static Button buttonThree = new JoystickButton(m_stick, 3);
+    private static Button buttonFour = new JoystickButton(m_stick, 4);
+    private static Button buttonFive = new JoystickButton(m_stick, 5);
+    private static Button buttonSix = new JoystickButton(m_stick, 6);
+    private static Button s_buttonTwelve = new JoystickButton(s_stick, 12);
 
     //Assign commands to buttons
-    public OI() {
+    OI() {
         //Maps elevator controls to buttons 3-6 on main stick
         buttonThree.whileHeld(new ElevatorDown(false));
         buttonFour.whileHeld(new ElevatorUp(false));
         buttonFive.whenPressed(new ElevatorDown(true));
         buttonSix.whenPressed(new ElevatorUp(true));
+
         rightTrigger.whenPressed(new ArmClose());
         leftTrigger.whenPressed(new ArmOpen());
         s_buttonTwelve.whenPressed(new SwitchCamera());

@@ -7,9 +7,7 @@
 
 package frc.team7195;
 
-import edu.wpi.first.wpilibj.BuiltInAccelerometer;
-import edu.wpi.first.wpilibj.PowerDistributionPanel;
-import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
@@ -24,6 +22,8 @@ import frc.team7195.subsystems.Elevator;
 
 public class Robot extends TimedRobot 
 {
+    public static DigitalInput elevSwitchBottom;
+    public static DigitalInput elevSwitchTop;
 
     private static final Drivetrain Drivetrain = new Drivetrain();
     public static Arm arm;
@@ -44,6 +44,10 @@ public class Robot extends TimedRobot
     public void robotInit() 
     {
         oi = new OI();
+
+        elevSwitchBottom = new DigitalInput(1);
+        elevSwitchBottom = new DigitalInput(2);
+
         //CameraServer.getInstance().startAutomaticCapture();
 
         //Allows selection of autonomous mode from SmartDashboard
@@ -61,6 +65,8 @@ public class Robot extends TimedRobot
         SmartDashboard.putData("PDP Info", new PowerDistributionPanel(1));
         SmartDashboard.putData("Built in Accelerometer", new BuiltInAccelerometer());
         SmartDashboard.putData("Drivetrain", new Drivetrain());
+        SmartDashboard.putData("Bottom Limit Switch", elevSwitchBottom);
+        SmartDashboard.putData("Top Limit Switch", elevSwitchTop);
     }
 
     /**
