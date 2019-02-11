@@ -1,11 +1,12 @@
 package frc.team7195.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import frc.team7195.Robot;
 
 
 public class AltAutonomous extends Command {
     public AltAutonomous() {
-
+        requires(Robot.drivetrain);
     }
 
 

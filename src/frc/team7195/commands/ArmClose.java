@@ -1,12 +1,12 @@
 package frc.team7195.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import frc.team7195.Robot;
 
 
 public class ArmClose extends Command {
     public ArmClose() {
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
+        requires(Robot.arm);
     }
 
 

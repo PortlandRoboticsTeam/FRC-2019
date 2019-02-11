@@ -17,13 +17,18 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.team7195.commands.AltAutonomous;
 import frc.team7195.commands.BaseAutonomous;
 import frc.team7195.commands.DriveModeSet;
+import frc.team7195.subsystems.Arm;
 import frc.team7195.subsystems.Drivetrain;
+import frc.team7195.subsystems.Elevator;
 
 
 public class Robot extends TimedRobot 
 {
 
     private static final Drivetrain Drivetrain = new Drivetrain();
+    public static Arm arm;
+    public static Drivetrain drivetrain;
+    public static Elevator elevator;
     static OI oi;
 
     private Command autonomousCommand;
