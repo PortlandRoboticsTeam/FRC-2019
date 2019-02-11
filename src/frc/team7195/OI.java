@@ -45,10 +45,10 @@ public class OI {
     //Assign commands to buttons
     OI() {
         //Maps elevator controls to buttons 3-6 on main stick
-        buttonThree.whileHeld(new ElevatorDown(false));
-        buttonFour.whileHeld(new ElevatorUp(false));
-        buttonFive.whenPressed(new ElevatorDown(true));
-        buttonSix.whenPressed(new ElevatorUp(true));
+        buttonThree.whileHeld(new ElevatorDown());
+        buttonFour.whileHeld(new ElevatorUp());
+        buttonFive.toggleWhenPressed(new ElevatorDown());
+        buttonSix.toggleWhenPressed(new ElevatorUp());
 
         rightTrigger.whenPressed(new ArmClose());
         leftTrigger.whenPressed(new ArmOpen());

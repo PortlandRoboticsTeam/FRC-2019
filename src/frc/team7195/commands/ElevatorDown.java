@@ -3,10 +3,12 @@ package frc.team7195.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.team7195.Robot;
 
+import static frc.team7195.Robot.elevator;
+
 
 public class ElevatorDown extends Command {
-    public ElevatorDown(boolean moveToSensor) {
-        requires(Robot.elevator);
+    public ElevatorDown() {
+        requires(elevator);
     }
 
     @Override
@@ -16,7 +18,7 @@ public class ElevatorDown extends Command {
 
     @Override
     protected void execute() {
-
+        elevator.elevatorDown();
     }
 
     @Override
