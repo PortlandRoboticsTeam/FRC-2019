@@ -26,7 +26,7 @@ public class ElevatorUp extends Command {
     @Override
     protected boolean isFinished() {
         //May need to be inverted
-        return Robot.elevSwitchBottom.get();
+        return Robot.elevSwitchTop.get();
     }
 
     @Override

@@ -8,15 +8,15 @@ public class Arm extends Subsystem {
 
     public static DoubleSolenoid armValve = new DoubleSolenoid(5, 6);
 
-    public static void solenoidPositionOne() {
+    public static void armOpen() {
         armValve.set(DoubleSolenoid.Value.kForward);
     }
 
-    public static void solenoidPositionTwo() {
+    public static void armClose() {
         armValve.set(DoubleSolenoid.Value.kReverse);
     }
 
-    public static void solenoidPositionOff() {
+    public static void armOff() {
         armValve.set(DoubleSolenoid.Value.kOff);
     }
 
