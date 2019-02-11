@@ -3,8 +3,8 @@ package frc.team7195.commands;
 import edu.wpi.first.wpilibj.command.Command;
 
 
-public class elevatorDown extends Command {
-    public elevatorDown(boolean moveToSensor) {
+public class ElevatorDown extends Command {
+    public ElevatorDown(boolean moveToSensor) {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }

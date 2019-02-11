@@ -10,8 +10,7 @@ package frc.team7195;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import frc.team7195.commands.elevatorDown;
-import frc.team7195.commands.elevatorUp;
+import frc.team7195.commands.*;
 
 /**
  * This class binds the controls on the physical operator interface
@@ -41,17 +40,18 @@ public class OI {
     public static Button buttonFour = new JoystickButton(m_stick, 4);
     public static Button buttonFive = new JoystickButton(m_stick, 5);
     public static Button buttonSix = new JoystickButton(m_stick, 6);
+    public static Button s_buttonTwelve = new JoystickButton(s_stick, 12);
 
     //Assign commands to buttons
-
     public OI() {
         //Maps elevator controls to buttons 3-6 on main stick
-        buttonThree.whileHeld(new elevatorDown(false));
-        buttonFour.whileHeld(new elevatorUp(false));
-        buttonFive.whenPressed(new elevatorDown(true));
-        buttonSix.whenPressed(new elevatorUp(true));
-
-
+        buttonThree.whileHeld(new ElevatorDown(false));
+        buttonFour.whileHeld(new ElevatorUp(false));
+        buttonFive.whenPressed(new ElevatorDown(true));
+        buttonSix.whenPressed(new ElevatorUp(true));
+        rightTrigger.whenPressed(new ArmClose());
+        leftTrigger.whenPressed(new ArmOpen());
+        s_buttonTwelve.whenPressed(new SwitchCamera());
     }
 
 
