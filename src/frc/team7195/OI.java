@@ -41,6 +41,11 @@ public class OI {
     private static Button buttonFive = new JoystickButton(m_stick, 5);
     private static Button buttonSix = new JoystickButton(m_stick, 6);
     private static Button s_buttonTwelve = new JoystickButton(s_stick, 12);
+    private static Button m_buttonTwelve = new JoystickButton(s_stick, 12);
+    private static Button altButtonThree = new JoystickButton(s_stick, 3);
+    private static Button altButtonFour = new JoystickButton(s_stick, 4);
+    private static Button altButtonFive = new JoystickButton(s_stick, 5);
+    private static Button altButtonSix = new JoystickButton(s_stick, 6);
 
     //Assign commands to buttons
     OI() {
@@ -50,9 +55,15 @@ public class OI {
         buttonFive.toggleWhenPressed(new ElevatorDown());
         buttonSix.toggleWhenPressed(new ElevatorUp());
 
+        altButtonThree.whenPressed(new BeltsReverse());
+        altButtonFour.whenPressed(new BeltsForward());
+        altButtonFive.whenPressed(new BeltsOff());
+        altButtonSix.whenPressed(new ArmOff());
+
         rightTrigger.whenPressed(new ArmClose());
         leftTrigger.whenPressed(new ArmOpen());
         s_buttonTwelve.whenPressed(new SwitchCamera());
+        m_buttonTwelve.whenPressed(new PnuematicsOff());
     }
 
 

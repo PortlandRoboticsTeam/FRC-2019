@@ -22,6 +22,7 @@ import frc.team7195.subsystems.Elevator;
 
 public class Robot extends TimedRobot 
 {
+    public static Compressor compressor;
     public static DigitalInput elevSwitchBottom;
     public static DigitalInput elevSwitchTop;
 
@@ -47,6 +48,8 @@ public class Robot extends TimedRobot
 
         elevSwitchBottom = new DigitalInput(1);
         elevSwitchBottom = new DigitalInput(2);
+
+        Compressor compressor = new Compressor();
 
         //CameraServer.getInstance().startAutomaticCapture();
 
