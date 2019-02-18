@@ -2,11 +2,14 @@ package frc.team7195.subsystems;
 
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.PWMVictorSPX;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class Arm extends Subsystem {
 
-    public static DoubleSolenoid armValve = new DoubleSolenoid(5, 6);
+    private static DoubleSolenoid armValve = new DoubleSolenoid(5, 6);
+    private static PWMVictorSPX rightBelts = new PWMVictorSPX(2);
+    private static PWMVictorSPX leftBelts = new PWMVictorSPX(3);
 
     public static void armOpen() {
         armValve.set(DoubleSolenoid.Value.kForward);
@@ -18,6 +21,21 @@ public class Arm extends Subsystem {
 
     public static void armOff() {
         armValve.set(DoubleSolenoid.Value.kOff);
+    }
+
+    public static void beltsForward() {
+        rightBelts.set(1);
+        leftBelts.set(1);
+    }
+
+    public static void beltsReverse() {
+        rightBelts.set(-1);
+        leftBelts.set(-1);
+    }
+
+    public static void beltsOff() {
+        rightBelts.set(0);
+        leftBelts.set(0);
     }
 
     public void initDefaultCommand() {
