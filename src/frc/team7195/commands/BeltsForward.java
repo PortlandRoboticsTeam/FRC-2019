@@ -3,6 +3,7 @@ package frc.team7195.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.team7195.Robot;
 
+import static frc.team7195.subsystems.Arm.beltsForward;
 import static frc.team7195.subsystems.Arm.beltsOff;
 
 
@@ -18,12 +19,11 @@ public class BeltsForward extends Command {
 
     @Override
     protected void execute() {
-
+        beltsForward();
     }
 
     @Override
     protected boolean isFinished() {
-        // TODO: Make this return true when this Command no longer needs to run execute()
         return false;
     }
 

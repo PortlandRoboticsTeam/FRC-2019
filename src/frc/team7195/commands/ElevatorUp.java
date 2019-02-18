@@ -2,6 +2,7 @@ package frc.team7195.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.team7195.Robot;
+import frc.team7195.subsystems.Elevator;
 
 import static frc.team7195.Robot.elevator;
 
@@ -19,7 +20,7 @@ public class ElevatorUp extends Command {
 
     @Override
     protected void execute() {
-        elevator.elevatorUp();
+        Elevator.elevatorUp();
     }
 
 
