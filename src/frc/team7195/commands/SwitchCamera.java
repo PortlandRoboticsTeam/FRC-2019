@@ -21,7 +21,7 @@ public class SwitchCamera extends Command {
 
     @Override
     protected boolean isFinished() {
-        return false;
+        return true;
     }
 
     @Override
