@@ -6,17 +6,14 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class Elevator extends Subsystem {
 
-    private static PWMVictorSPX elevatorMotorRight = new PWMVictorSPX(0);
-    private static PWMVictorSPX elevatorMotorLeft = new PWMVictorSPX(1);
+    private static PWMVictorSPX elevatorMotor = new PWMVictorSPX(4);
 
     public static void elevatorUp() {
-        elevatorMotorRight.set(1);
-        elevatorMotorLeft.set(1);
+        elevatorMotor.set(1);
     }
 
     public static void elevatorDown() {
-        elevatorMotorRight.set(0);
-        elevatorMotorLeft.set(0);
+        elevatorMotor.set(0);
     }
 
     public void initDefaultCommand() {

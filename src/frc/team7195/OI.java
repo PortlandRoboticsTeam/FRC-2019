@@ -55,13 +55,17 @@ public class OI {
         buttonFive.toggleWhenPressed(new ElevatorDown());
         buttonSix.toggleWhenPressed(new ElevatorUp());
 
+        //Maps arm button controls to buttons 3-6 on second stick
         altButtonThree.whenPressed(new BeltsReverse());
         altButtonFour.whenPressed(new BeltsForward());
         altButtonFive.whenPressed(new BeltsOff());
         altButtonSix.whenPressed(new ArmOff());
 
+        //Maps arm controls to triggers
         rightTrigger.whenPressed(new ArmClose());
         leftTrigger.whenPressed(new ArmOpen());
+
+        //Maps other functions to base buttons
         s_buttonTwelve.whenPressed(new SwitchCamera());
         m_buttonTwelve.whenPressed(new PnuematicsOff());
     }

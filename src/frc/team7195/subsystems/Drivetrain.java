@@ -10,10 +10,10 @@ import frc.team7195.OI;
 
 public class Drivetrain extends Subsystem {
 
-    private static Spark frontRight = new Spark(1);
-    private static Spark rearRight = new Spark(2);
-    private static Spark frontLeft = new Spark(3);
-    private static Spark rearLeft = new Spark(4);
+    private static Spark frontRight = new Spark(0);
+    private static Spark rearRight = new Spark(1);
+    private static Spark frontLeft = new Spark(2);
+    private static Spark rearLeft = new Spark(3);
     //static AnalogGyro m_gyro = new AnalogGyro(1);
 
     private static SpeedControllerGroup right = new SpeedControllerGroup(frontRight, rearRight);
