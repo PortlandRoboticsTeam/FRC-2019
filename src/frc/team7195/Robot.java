@@ -46,12 +46,12 @@ public class Robot extends TimedRobot
     {
         oi = new OI();
 
-        elevSwitchBottom = new DigitalInput(1);
-        elevSwitchBottom = new DigitalInput(2);
+        elevSwitchBottom = new DigitalInput(8);
+        elevSwitchBottom = new DigitalInput(9);
 
         Compressor compressor = new Compressor();
 
-        //CameraServer.getInstance().startAutomaticCapture();
+        CameraServer.getInstance().startAutomaticCapture();
 
         //Allows selection of autonomous mode from SmartDashboard
         chooser.addDefault("Default Auto", new BaseAutonomous());
