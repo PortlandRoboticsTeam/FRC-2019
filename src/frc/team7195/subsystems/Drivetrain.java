@@ -1,7 +1,6 @@
 package frc.team7195.subsystems;
 
 
-import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -10,15 +9,21 @@ import frc.team7195.OI;
 
 
 public class Drivetrain extends Subsystem {
+    //Sparks at 8 and 9, 6 on talon, 0 and 1 on victor
 
-    private static Spark frontRight = new Spark(0);
-    private static Spark rearRight = new Spark(1);
-    private static Spark frontLeft = new Spark(2);
-    private static Spark rearLeft = new Spark(3);
+    private static Spark right = new Spark(8);
+    private static Spark left = new Spark(9);
+
+    /*
+    private static Spark frontRight = new Spark(1);
+    private static Spark rearRight = new Spark(2);
+    private static Spark frontLeft = new Spark(3);
+    private static Spark rearLeft = new Spark(4);
     //static AnalogGyro m_gyro = new AnalogGyro(1);
 
     private static SpeedControllerGroup right = new SpeedControllerGroup(frontRight, rearRight);
     private static SpeedControllerGroup left = new SpeedControllerGroup(frontLeft, rearLeft);
+    */
 
     private static DifferentialDrive drive = new DifferentialDrive(right, left);
 

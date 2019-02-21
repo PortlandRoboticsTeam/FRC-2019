@@ -7,9 +7,9 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class Arm extends Subsystem {
 
-    private static DoubleSolenoid armValve = new DoubleSolenoid(6, 7);
-    private static PWMVictorSPX rightBelts = new PWMVictorSPX(5);
-    private static PWMVictorSPX leftBelts = new PWMVictorSPX(6);
+    private static DoubleSolenoid armValve = new DoubleSolenoid(4, 5);
+    private static PWMVictorSPX rightBelts = new PWMVictorSPX(0);
+    private static PWMVictorSPX leftBelts = new PWMVictorSPX(1);
 
     public static void armOpen() {
         armValve.set(DoubleSolenoid.Value.kForward);

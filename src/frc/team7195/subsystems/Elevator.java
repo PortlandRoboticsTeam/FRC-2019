@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class Elevator extends Subsystem {
 
-    private static PWMTalonSRX elevatorMotor = new PWMTalonSRX(4);
+    private static PWMTalonSRX elevatorMotor = new PWMTalonSRX(5);
 
     public static void elevatorUp() {
         elevatorMotor.set(1);
